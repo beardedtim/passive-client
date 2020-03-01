@@ -1,0 +1,13 @@
+{
+  "name": "@beardedtim/passive-client",
+  "version": "0.0.0-DEMO",
+  "description": "A way to passively send events to some event server",
+  "main": "lib/passive_client.js",
+  "author": "Tim Roberts <timroberts@fastmail.org>",
+  "license": "WTFPL",
+  "private": false,
+  "type": "module",
+  "devDependencies": {
+    "express": "^4.17.1"
+  }
+}

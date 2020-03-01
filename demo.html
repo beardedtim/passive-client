@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" id="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        min-height: 1000px;
+      }
+    </style>
+  </head>
+  <body id="foo">
+    <div class="bar">
+      <p
+        id="asdfasdf"
+        class="bar baz bor"
+        data-foo="foo"
+        data-bar="bar"
+        data-baz="baz"
+      >
+        Hello, world!
+      </p>
+    </div>
+  </body>
+  <!--
+    Regardless of how you want to interact with
+    the service, you will need to 
+  -->
+  <script>
+    window.__PASSIVE_CONFIG__ = {
+      // We need to know what the API URL is
+      //
+      // This will be your specific API that
+      // is figured out elsewhere
+      api_url: "http://localhost:5000",
+      // This is the URL that we can import the
+      // worker file from.
+      //
+      // If you are using some weird content
+      // cdn path structure thing, you can
+      // set all that madness here and figure
+      // out your own header/security stuff.
+      //
+      // Good luck!
+      worker_path: "/lib/_worker.js"
+    };
+  </script>
+  <!--
+    You can import it in HTML
+  -->
+  <!-- <script src="/lib/passive_client.js" defer type="module"></script> -->
+
+  <!--
+    Then you can write your own inline script
+    and reference it
+
+    NOTE: You still have to use type="module".
+  -->
+
+  <!-- <script defer type="module">
+    // It's somewhere on the window.
+    const passive = window.__passive_instance;
+
+    // Log every response
+    passive(console.dir);
+  </script> -->
+  <!--
+    You can also import it via the esm spec
+    and you can use it however you want.
+
+    NOTE: It still sets the window.__passive_instance
+    value.
+  -->
+  <!-- <script type="module" defer type="module">
+    import passive from "/lib/passive_client.js";
+
+    console.dir(passive(console.dir));
+  </script> -->
+</html>
